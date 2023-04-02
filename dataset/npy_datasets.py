@@ -8,8 +8,13 @@ class NPY_datasets(Dataset):
     def __init__(self, path_Data, config, train=True):
         super(NPY_datasets, self)
         if train:
+            #printing the images and the masks 
             images_list = os.listdir(path_Data+'train/images/')
+            print(images_list)
+            print(len(images_list))
             masks_list = os.listdir(path_Data+'train/masks/')
+            print(masks_list)
+            print(len(masks_list))
             self.data = []
             for i in range(len(images_list)):
                 img_path = path_Data+'train/images/' + images_list[i]

@@ -17,12 +17,12 @@ class setting_config:
     }
 
     test_weights = ''
-
-    datasets = 'isic18' 
-    if datasets == 'isic18':
-        data_path = './data/isic2018/'
-    elif datasets == 'isic17':
-        data_path = './data/isic2017/'
+    #dataset name and path set to 'ph2' 
+    datasets = 'ph2' 
+    if datasets == 'ph2':
+        data_path = './data/ph2/'
+    #elif datasets == 'isic17':
+    #    data_path = './data/isic2017/'
     else:
         raise Exception('datasets in not right!')
 
@@ -40,7 +40,8 @@ class setting_config:
     rank = None
     amp = False
     batch_size = 8
-    epochs = 300
+    #modified number of epochs for ph2 training, 40 epochs  
+    epochs = 40
 
     work_dir = 'results/' + network + '_' + datasets + '_' + datetime.now().strftime('%A_%d_%B_%Y_%Hh_%Mm_%Ss') + '/'
 

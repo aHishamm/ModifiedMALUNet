@@ -44,6 +44,9 @@ def main(config):
     set_seed(config.seed)
     gpu_ids = [0]# [0, 1, 2, 3]
     torch.cuda.empty_cache()
+    #Checking if Cuda is installed properly and printing the device name 
+    print(torch.cuda.is_available()) 
+    print(torch.cuda.get_device_name(0))
 
 
 

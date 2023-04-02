@@ -347,20 +347,21 @@ class myRandomRotation:
 
 class myNormalize:
     def __init__(self, data_name, train=True):
-        if data_name == 'isic18':
+    ##Normalizing the ph2 dataset 
+        if data_name == 'ph2':
             if train:
                 self.mean = 157.561
                 self.std = 26.706
             else:
                 self.mean = 149.034
                 self.std = 32.022
-        elif data_name == 'isic17':
-            if train:
-                self.mean = 159.922
-                self.std = 28.871
-            else:
-                self.mean = 148.429
-                self.std = 25.748
+        #elif data_name == 'isic17':
+        #    if train:
+        #        self.mean = 159.922
+        #        self.std = 28.871
+        #    else:
+        #        self.mean = 148.429
+        #        self.std = 25.748
             
     def __call__(self, data):
         img, msk = data

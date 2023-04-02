@@ -115,6 +115,7 @@ def test_one_epoch(test_loader,
     gts = []
     loss_list = []
     with torch.no_grad():
+        #test the entire evaluation set by removing the if statement 
         for i, data in enumerate(tqdm(test_loader)):
             img, msk = data
             img, msk = img.cuda(non_blocking=True).float(), msk.cuda(non_blocking=True).float()
@@ -127,8 +128,8 @@ def test_one_epoch(test_loader,
                 out = out[0]
             out = out.squeeze(1).cpu().detach().numpy()
             preds.append(out) 
-            if i % config.save_interval == 0:
-                save_imgs(img, msk, out, i, config.work_dir + 'outputs/', config.datasets, config.threshold, test_data_name=test_data_name)
+            #if i % config.save_interval == 0:
+            save_imgs(img, msk, out, i, config.work_dir + 'outputs/', config.datasets, config.threshold, test_data_name=test_data_name)
 
         preds = np.array(preds).reshape(-1)
         gts = np.array(gts).reshape(-1)
