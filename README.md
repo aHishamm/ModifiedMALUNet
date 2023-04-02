@@ -1,5 +1,5 @@
 # MALUNet
-This is the official code repository for "MALUNet: A Muti-Attention and Light-weight UNet for Skin Lesion Segmentation", which is accpeted by *IEEE International Conference on Bioinformatics and Biomedicine (BIBM2022)* as a regular paper! [[arxiv]](https://arxiv.org/abs/2211.01784)
+This implementation is based on the "MALUNet: A Muti-Attention and Light-weight UNet for Skin Lesion Segmentation". [[arxiv]](https://arxiv.org/abs/2211.01784)
 
 **0. Main Environments**
 - python 3.8
@@ -10,9 +10,9 @@ This is the official code repository for "MALUNet: A Muti-Attention and Light-we
 
 - ISIC17 and ISIC18 dataset can be found [here](https://challenge.isic-archive.com/data/). 
 
-- After downloading the datasets, you are supposed to put them into './data/isic17/' and './data/isic18/', and the file format reference is as follows. (take the ISIC17 dataset as an example.)
+- The data should be stored in the following order inside the ./data folder 
 
-- './data/isic17/'
+- './data/ph2/'
   - train
     - images
       - .png
